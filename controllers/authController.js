@@ -43,7 +43,7 @@ export const login = async (req, res, next) => {
   }
 };
 
-export const me = async (req, res, next) => {
+export const getUserDetails= async (req, res, next) => {
   try {
     const { user } = req;
     res.json({ user });
@@ -51,3 +51,12 @@ export const me = async (req, res, next) => {
     next(err);
   }
 };
+
+export const logout=async(req,res,next)=>{
+  try {
+    res.clearCookie('token');
+    res.json({ message: 'Logged out successfully' });
+  } catch (error) {
+    next(error);
+  }
+}
