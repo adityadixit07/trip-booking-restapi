@@ -20,7 +20,7 @@ export function streamTicketPdf(res, booking, trip, user) {
   doc.text(`Status: ${booking.status}`);
   doc.moveDown();
 
-  doc.text('Thank you for booking with PSQUARE Company', { align: 'center' });
+  doc.text('Thank you for booking trip with our Company', { align: 'center' });
 
   doc.end();
 }
